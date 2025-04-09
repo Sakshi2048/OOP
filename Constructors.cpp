@@ -36,6 +36,10 @@ public:
     {
         cout << "Name: " << name << ", Marks: " << marks << endl;
     }
+
+    ~Student() {
+        cout << "Destructor called" << endl;
+    }
 };
 
 int main()
