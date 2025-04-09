@@ -1,39 +1,42 @@
-#include <iostream>
-using namespace std;
+#include <iostream>         
+using namespace std;   
 
-class Student{
-
+// Define a class named 'Student'
+class Student
+{
 public:
-   //Attributes / properties of student
-    string name;
-    float marks;
+    // Attributes / properties of the student
+    string name;           
+    float marks;            
 
-    // Methods (member functions)
-    void setMarks(float a)
+    // Method to set marks for the student
+    void setMarks(float a)  
     {
-        marks = a;
+        marks = a;         
     }
 
+    // Method to print student details
     void print()
     {
-        cout<<name<<"  "<<marks<<endl;
+        cout << name << "  " << marks << endl; 
     }
-
-
-
 };
-int main(){
-    
+
+int main()
+{
+    // Create an object class Student
     Student s1;
     Student s2;
 
-    s1.setMarks(100);
-    s1.name = "Sakshi";
-    s1.print();
+    
+    s1.setMarks(100);      // Set marks using the setMarks() function
+    s1.name = "Sakshi";    // Assign name 
+    s1.print();              // Print details 
 
+  
     s2.setMarks(98);
     s2.name = "Mahi";
     s2.print();
 
-    return 0;
+    return 0;   
 }
