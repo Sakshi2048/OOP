@@ -10,69 +10,37 @@ private:
     int c = 3; // Private member (not inherited)
 };
 
-/*
 
-Public Inheritance : 
-- public remains public
-- protected remains protected
-- private is not inherited
-
-*/ 
-class DerivedPublic : public Base {
-public:
-    void display() {
-        cout << "Public: " << a << endl;      // Allowed
-        cout << "Protected: " << b << endl;   // Allowed
-        // cout << c;                         // Not allowed (private in Base)
-    }
+class Child1 : public Base {
+    // a - public
+    // b - protected
+    // c - inaccessible
 };
 
-/*
 
-Protected Inheritance : 
-- public becomes protected
-- protected remains protected
-- private is not inherited
-
-*/ 
-class DerivedProtected : protected Base {
-public:
-    void display() {
-        cout << "Public becomes Protected: " << a << endl;     // Allowed
-        cout << "Protected remains Protected: " << b << endl;  // Allowed
-    }
+class Child2 : protected Base {
+    // a - protected
+    // b - protected
+    // c - inaccessible
 };
 
-/*
 
-Private Inheritance : 
-- public becomes private
-- protected becomes private
-- private is not inherited
-
-*/ 
-class DerivedPrivate : private Base {
-public:
-    void display() {
-        cout << "Public becomes Private: " << a << endl;       // Allowed
-        cout << "Protected becomes Private: " << b << endl;    // Allowed
-    }
+class Child3 : private Base {
+    // a - private
+    // b - private
+    // c - inaccessible
 };
 
 int main() {
-    DerivedPublic obj1;
+    Child1 obj1;
     cout << obj1.a << endl;   //  Accessible (remains public)
 
-    DerivedProtected obj2;
-    // obj2.a;                // Error: a is protected in DerivedProtected
+    Child2 obj2;
+    // cout << obj2.a << endl;                // Error: a is protected in Child2
 
-    DerivedPrivate obj3;
-    // obj3.a;                // Error: a is private in DerivedPrivate
+    Child3 obj3;
+    // cout << obj3.a << endl;              // Error: a is private in Child3
 
-    
-    obj1.display();
-    obj2.display();
-    obj3.display();
 
     return 0;
 }
