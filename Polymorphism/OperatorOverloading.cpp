@@ -11,25 +11,37 @@ public:
         y = b;
     }
 
+    // Display function
+    void display() {
+        cout << "(" << x << ", " << y << ")" << endl;
+    }
+
     // Overloading + operator
     Point operator+(Point p) {
+        // x = x of object calling the function , p.x = x of object passed
         Point temp;
         temp.x = x + p.x;
         temp.y = y + p.y;
         return temp;
     }
 
-    // Display function
-    void display() {
-        cout << "(" << x << ", " << y << ")" << endl;
+    Point operator-(Point p)
+    {
+        Point temp;
+        temp.x = x - p.x;
+        temp.y = y - p.y;
+        return temp;
     }
+
+    
 };
 
 int main() {
     Point p1(2, 3);
     Point p2(4, 5);
 
-    Point p3 = p1 + p2;  // Calls overloaded + operator
+    Point p3 = p1 + p2;  // Calls overloaded + operator 
+    // p1+p2 == p1.operator+(p2)
 
     cout << "Point 1: ";
     p1.display();
