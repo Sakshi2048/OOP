@@ -10,7 +10,7 @@ class Parent{
 
     ~ Parent()
     {
-        cout<<"Parent Constructor"<<endl;
+        cout<<"Parent Destructor"<<endl;
     }
 
 };
@@ -24,7 +24,7 @@ class Child : public Parent{
 
     ~ Child()
     {
-        cout<<"Child Constructor"<<endl;
+        cout<<"Child Destructor"<<endl;
     }
 };
 
